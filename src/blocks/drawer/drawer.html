@@ -1,0 +1,55 @@
+<!--DEV
+@ @include('blocks/drawer/drawer.html')
+
+<a href="#" data-drawer-trigger="" aria-controls="drawer-menu" aria-expanded="false" class="btn">Open Drawer</a>
+
+-->
+
+<section class="drawer" id="mob-menu" data-drawer-target>
+  <div class="drawer__overlay" data-drawer-close tabindex="-1"></div>
+  <div class="drawer__wrapper">
+    <div class="drawer__header">
+      <div class="drawer__title">
+        <img src="img/it-doors-logo-resp.svg" alt="Logo" width="112" height="42">
+      </div>
+      <button class="drawer__close" data-drawer-close="" aria-label="Закрыть Drawer"></button>
+    </div>
+
+    <div class="drawer__content">
+
+      <nav class="mobile-nav">
+        <ul class="list-nostyled  mobile-nav__list">
+          <li class="mobile-nav__item  active">
+            <a href="#" class="mobile-nav__link">Services & Cases</a>
+          </li>
+          <li class="mobile-nav__item">
+            <a href="#" class="mobile-nav__link">Products</a>
+          </li>
+          <li class="mobile-nav__item">
+            <a href="#" class="mobile-nav__link">About</a>
+          </li>
+          <li class="mobile-nav__item">
+            <a href="#" class="mobile-nav__link">Contacts</a>
+          </li>
+        </ul>
+      </nav>
+
+      <ul class="lang-list  lang-list--mobile  list-nostyled">
+        <li class="lang-list__item">
+          <a href="#" class="lang-list__link">Укр</a>
+        </li>
+        <li class="lang-list__item">
+          <a href="#" class="lang-list__link">Рус</a>
+        </li>
+        <li class="lang-list__item  active">
+          <a href="#" class="lang-list__link">Eng</a>
+        </li>
+      </ul>
+
+      <div class="drawer__links-block">
+        Ссылки
+      </div>
+
+    </div>
+  </div>
+</section>

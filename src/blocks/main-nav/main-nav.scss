@@ -1,0 +1,56 @@
+.main-nav {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: none;
+  position: relative;
+  z-index: 10;
+
+  @media (min-width: $menu-desktop-width) {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 0;
+
+    & + & {
+      margin-left: 42px;
+    }
+
+    &.active {
+
+      #{$block-name}__link {
+        font-weight: 800;
+        border-color: $title-color;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    vertical-align: top;
+    padding: 8px 0;
+    font-weight: 700;
+    font-size: 14px;
+    //background-image: none !important;
+    //text-shadow: none;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease-out;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      border-color: $title-color;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<!--DEV
+
+@ @include('blocks/alert/alert.html')
+
+<div class="alert" role="alert">
+  <p>Текст</p>
+</div>
+<div class="alert  alert--warning alert--some-mod-name" role="alert">
+  <h4 class="alert__header">Внимание</h4>
+  <p>Предупреждение</p>
+  <button class="close  close--sm alert__close" type="button" aria-label="Закрыть" title="Закрыть"><span>Закрыть</span>
+  </button>
+</div>
+<div class="alert  alert--danger" role="alert">
+  <h4 class="alert__header">Внимание</h4>
+  <p>Проблема</p>
+  <button class="close  close--sm alert__close" type="button" aria-label="Закрыть" title="Закрыть"><span>Закрыть</span>
+  </button>
+</div>
+<div class="alert  alert--success" role="alert">
+  <h4 class="alert__header">Внимание</h4>
+  <p>Успех</p>
+  <button class="close  close--sm alert__close" type="button" aria-label="Закрыть" title="Закрыть"><span>Закрыть</span>
+  </button>
+</div>
+
+-->
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
