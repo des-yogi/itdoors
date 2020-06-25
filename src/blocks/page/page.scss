@@ -203,7 +203,7 @@ img {
   height: auto;
 }
 
-a {
+a:not(.icon):not(.special) {
   font-family: $font-family--title;
   font-weight: 700;
   text-decoration: underline;
@@ -212,8 +212,10 @@ a {
   text-decoration-style: solid; // кроме IE
   text-underline-position: under; // кроме IE и iOS Safari
   text-decoration-thickness: 2px; // Firefox, Safari, iOS Safari only
+  letter-spacing: 0.035em;
   color: $link-color;
   background-color: transparent;
+  transition: all 0.2s ease-out;
   // background-image: linear-gradient(to right, $link-color);
   // background-position: 0 1.25em;
   // background-repeat: repeat-x;
@@ -284,9 +286,11 @@ h1,
 
   &--title {
     font-weight: 800;
+    text-align: center;
 
     @media (min-width: $menu-desktop-width) {
       font-size: $font-size-h1 * 1.5238;
+      text-align: left;
     }
   }
 }
@@ -340,10 +344,11 @@ address,
 figure {
   margin-top: 0;
   margin-bottom: $typo-margin-vertical;
+}
 
-  &:last-child {
-    margin-bottom: 0;
-  }
+figure {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 p {
@@ -376,8 +381,23 @@ li {
   line-height: inherit;
 
   &:last-child {
-    margin-bottom: 0;
+    //margin-bottom: 0;
   }
+}
+
+
+.subtitle {
+  font-family: $font-family--title;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.035em;
+  color: $text-muted;
+}
+
+.text-large {
+  font-family: inherit;
+  font-size: 20px;
+  line-height: 1.5;
 }
 
 // Вложенные упорядоченные списки: 1, 2, 3, 3.1 -> 3.1.1, 3.1.2…
@@ -628,16 +648,16 @@ pre {
 
 // Родитель. Указаны промежутки между ячейками: XS|SM|MD|LG|XL|XXL;
 // @include row($grid-gutter-width, 10px, 12px, 16px, 20px, 26px);
-// .row {
-//   @include row(
-//     $xs-grid-gutter:  20px,
-//     $sm-grid-gutter:  20px,
-//     $md-grid-gutter:  $grid-gutter-width,
-//     $lg-grid-gutter:  $grid-gutter-width,
-//     $xl-grid-gutter:  $grid-gutter-width,
-//     $xxl-grid-gutter: $grid-gutter-width
-//   );
-// }
+.row {
+  @include row(
+    $xs-grid-gutter:  $grid-gutter-width,
+    $sm-grid-gutter:  $grid-gutter-width,
+    $md-grid-gutter:  $grid-gutter-width,
+    $lg-grid-gutter:  $grid-gutter-width,
+    $xl-grid-gutter:  $grid-gutter-width,
+    $xxl-grid-gutter: $grid-gutter-width
+  );
+}
 
 /* &__element {
   @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
@@ -649,6 +669,6 @@ pre {
 } */
 
 
-// background: svg-load('../blocks/phones-modal/bg-img/phone.svg', fill=$main-color, stroke=rgba(255, 255, 255, 0));
-
+// background-image: svg-load('../blocks/phones-modal/bg-img/phone.svg', fill=$main-color, stroke=rgba(255, 255, 255, 0));
+// background-image: svg-load('../blocks/phones-modal/bg-img/phone.svg', fill=$main-color);
 

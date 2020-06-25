@@ -1,34 +1,56 @@
 .btn {
   box-sizing: border-box;
   display: inline-block;
+  position: relative;
   max-width: 100%;
   overflow: hidden;
   margin: 0;
   border-radius: $border-radius;
   // border: 1px solid $gray-lighter;
   border: 0;
-  padding: $field-padding-vertical  $field-padding-horizontal;
+  padding: 9.5px 48px 9.5px 5px;
   vertical-align: middle;
   white-space: nowrap;
   text-overflow: ellipsis;
   user-select: none;
-  text-align: center;
-  font-size: 1em;
+  text-align: left;
+  font-family: $font-family--title;
+  font-size: 18px;
+  font-weight: 600;
   font-family: inherit;
   line-height: $line-height;
   text-decoration: none;
   text-transform: none;
+  letter-spacing: 0.035em;
   color: $text-color;
-  background-color: $gray-lightest;
-  background-image: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 22px 12px;
+  background-position: right 5px center;
+  background-image: svg-load('../blocks/btn/bg-img/arrow-right-btn.svg', fill=$icon-color);
   cursor: pointer;
+
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.25s ease-out;
+  }
 
   &:hover,
   &:focus {
     text-decoration: none;
     color: $text-color;
-    background-color: darken($gray-lightest, 10%);
     // border-color: darken($gray-lighter, 12%);
+
+    &::after {
+      width: 100%;
+    }
   }
 
   // &:visited {
@@ -42,11 +64,12 @@
 
   &--disabled,
   &:disabled {
-    opacity: $opacity;
     cursor: not-allowed;
-    color: $text-color;
-    background-color: $gray-lightest;
+    color: $text-muted;
+    background-image: svg-load('../blocks/btn/bg-img/arrow-right-btn.svg', fill=$text-muted);
+    //background-color: $gray-lightest;
     // border-color: $gray-lighter;
+    //opacity: $opacity;
 
     @at-root a.btn--disabled {
       pointer-events: none;
@@ -59,24 +82,37 @@
   // }
 
 
+  &--main {
+    padding: 8px 72px 7px 24px;
+    color: $text-color;
+    background-color: $main-color;
+    background-position: right 24px center;
+    border: 2px solid $main-color;
+    transition: all 0.2s ease-out;
 
-  // &--main {
-  //   color: #fff;
-  //   background-color: $color-main;
-  //   // border: 1px solid $color-main;
+    &::after {
+      display: none;
+    }
 
-  //   &:hover,
-  //   &:focus {
-  //     color: #fff;
-  //     background-color: darken($color-main, 10%);
-  //     // border-color: darken($color-main, 12%);
-  //   }
+    &:hover,
+    &:focus {
+      color: $main-color;
+      background-color: $icon-color;
+      background-image: svg-load('../blocks/btn/bg-img/arrow-right-btn.svg', fill=$main-color);
+      border-color: $icon-color;
+    }
 
-  //   &--disabled,
-  //   &:disabled {
-  //     color: #fff;
-  //     background-color: $color-main;
-  //     // border-color: $color-main;
-  //   }
-  // }
+    &--disabled,
+    &:disabled {
+      color: $text-muted;
+      background-color: $white;
+      background-image: svg-load('../blocks/btn/bg-img/arrow-right-btn.svg', fill=$text-muted);
+      border-color: $text-muted;
+      cursor: not-allowed;
+
+      @at-root a.btn--main--disabled {
+        pointer-events: none;
+      }
+    }
+  }
 }

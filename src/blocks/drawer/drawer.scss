@@ -119,4 +119,13 @@
       margin-top: auto;
     }
   }
+
+  &__section {
+    margin-top: 50px;
+  }
+
+  &__links-title {
+    margin-top: 0;
+    color: $text-muted;
+  }
 }

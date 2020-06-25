@@ -28,6 +28,7 @@
   }
 
   img {
+    display: block;
     object-fit: cover;
     object-position: center;
   }
@@ -45,6 +46,14 @@
 
     &::before {
       padding-top: percentage(3 / 4);
+    }
+  }
+
+  &--4-5 {
+    // модификатор на случай вставки 4/5
+
+    &::before {
+      padding-top: percentage(5 / 4);
     }
   }
 
