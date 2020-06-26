@@ -83,11 +83,26 @@
     width: 36px;
     height: 36px;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: left center;
 
     &--design {
       background-size: 36px 36px;
       background-image: url(../img/ui-ux-design.svg);
+    }
+
+    &--mobile {
+      background-size: 20px 36px;
+      background-image: url(../img/mobile-apps.svg);
+    }
+
+    &--web-dev {
+      background-size: 36px 36px;
+      background-image: url(../img/web-dev.svg);
+    }
+
+    &--ai {
+      background-size: 36px 36px;
+      background-image: url(../img/artificial.svg);
     }
   }
 

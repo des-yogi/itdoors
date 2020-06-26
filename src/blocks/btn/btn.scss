@@ -81,6 +81,13 @@
   //   vertical-align: middle;
   // }
 
+  &--download {
+    padding: 9.5px 5px 9.5px 48px;
+    background-size: 20px 22px;
+    background-position: left 5px center;
+    background-image: svg-load('../blocks/btn/bg-img/download.svg', fill=$icon-color);
+  }
+
 
   &--main {
     padding: 8px 72px 7px 24px;

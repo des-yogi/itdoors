@@ -172,7 +172,7 @@
 
             <li class="services__item">
               <a href="#" class="special  services__link">
-                <span class="services__icon  services__icon--design"></span>
+                <span class="services__icon  services__icon--mobile"></span>
                 <h3 class="services__subtitle">Mobile Apps</h3>
                 <p class="services__descr">Design and develop an industry leading product. Далеко-далеко за словесными горами в стране, гласных и согласных живут.</p>
               </a>
@@ -180,16 +180,16 @@
 
             <li class="services__item">
               <a href="#" class="special  services__link">
-                <span class="services__icon  services__icon--design"></span>
-                <h3 class="services__subtitle">Mobile Apps</h3>
+                <span class="services__icon  services__icon--web-dev"></span>
+                <h3 class="services__subtitle">Web Development</h3>
                 <p class="services__descr">Design and develop an industry leading product.</p>
               </a>
             </li>
 
             <li class="services__item">
               <a href="#" class="special  services__link">
-                <span class="services__icon  services__icon--design"></span>
-                <h3 class="services__subtitle">Mobile Apps</h3>
+                <span class="services__icon  services__icon--ai"></span>
+                <h3 class="services__subtitle">Artificial Intelligence</h3>
                 <p class="services__descr">Design and develop an industry leading product. Далеко-далеко за словесными горами в стране, гласных и согласных живут.</p>
               </a>
             </li>
@@ -208,13 +208,67 @@
       </main>
 
       <aside>
-        <section class="presentation">
 
+        <section class="container  presentation">
+          <div class="row">
+
+            <div class="presentation__col-text">
+              <div class="presentation__text">
+                <h2 class="presentation__title">Presentation of the company</h2>
+                <p class="text-large  presentation__descr">Download our presentation in "pdf" format, ~ 16.47 MB</p>
+                <a href="#" class="icon  btn  btn--download  presentation__download" download>Download</a>
+              </div>
+            </div>
+
+            <div class="presentation__col-img">
+              <div class="presentation__img">
+                <picture>
+                  <source data-srcset="img/presentation-img.webp" type="image/webp">
+                  <img class="b-lazy" data-src="img/presentation-img.png" alt="Презентация" width="" height="">
+                </picture>
+              </div>
+            </div>
+
+          </div>
         </section>
 
-        <section class="contacts">
+        <section class="container  contacts" itemscope itemtype="http://schema.org/LocalBusiness">
+          <meta itemprop="name" content="IT-Doors Outsourcing">
+          <meta itemprop="description" content="Дизайн и разработка сайтов, мобильных приложений, систем искусственного интеллекта и т.д. и т.п.">
 
+          <h2 class="visually-hidden">Наши контактные данные и адрес студии</h2>
+
+          <div class="row">
+
+            <div class="contacts__col">
+
+              <h4 class="contacts__title">Phone</h4>
+              <a href="tel:+380684356" class="special  contacts__link-descr"><span itemprop="telephone">+38 068 43 56</span></a>
+              <div class="contacts__msg">
+                @@include('blocks/messengers/messengers.html')
+              </div>
+
+            </div>
+
+            <div class="contacts__col">
+
+              <h4 class="contacts__title">Mail</h4>
+              <a href="mailto:dm@itdoors.com.ua" class="special  contacts__link-descr"><span itemprop="email">dm@itdoors.com.ua</span></a>
+
+            </div>
+
+            <div class="contacts__col" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+
+              <h4 class="contacts__title">
+                <span itemprop="addressLocality">Kyiv <span class="visually-hidden">Ukraine</span></span>
+              </h4>
+              <span class="contacts__link-descr"><span itemprop="streetAddress">Ochakivsky Lane, 5/6, 317</span>, <span itemprop="postalCode">03151</span></span>
+
+            </div>
+
+          </div>
         </section>
+
       </aside>
 
     </div>
