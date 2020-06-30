@@ -41,7 +41,7 @@
 <meta name="msapplication-config" content="/img/browserconfig.xml">
 <meta name="theme-color" content="#ffffff"></head>
 <body>
-  <div class="page__inner">
+  <div id="scrollbar" class="page__inner">
     <div class="page__content">
       <header class="page-header">
         <div class="container  page-header__inner">
@@ -84,34 +84,33 @@
         <div class="container  hero__bg">
           <div class="hero__inner">
             <h1 class="visually-hidden">Студия по разработке сайтов и мобильных приложений - IT-Doors</h1>
-            <span class="h1  h1--title  hero__slogan">
-              <span>Your idea</span>
-            <span>Our amazing creation</span>
-            </span>
             <div class="hero__trends">
               <ul class="list-nostyled  hero__trends-list">
+                <li class="hero__trends-item">
+                  <a href="#" class="hero__trends-link">Web Development</a>
+                </li>
                 <li class="hero__trends-item">
                   <a href="#" class="hero__trends-link">UI / UX Design</a>
                 </li>
                 <li class="hero__trends-item">
                   <a href="#" class="hero__trends-link">Mobile Apps</a>
                 </li>
-                <li class="hero__trends-item">
-                  <a href="#" class="hero__trends-link">Web Development</a>
-                </li>
               </ul>
             </div>
-            <div class="row">
+            <span class="h1  hero__slogan">
+              <span>Your idea</span>
+            <span>Our amazing creation</span>
+            </span>
+            <!-- <div class="row">
               <div class="hero__img">
                 <picture>
                   <source data-srcset="img/hero-mob.webp" media="(min-width: 480px)" type="image/webp">
                   <source data-srcset="img/hero-mob.png" media="(min-width: 480px)">
-                  <!-- 480x000 -->
                   <source data-srcset="img/hero-mob.webp" type="image/webp">
-                  <img class="b-lazy" data-src="img/hero-mob.png" alt="hero" width height>
+                  <img class="b-lazy" data-src="img/hero-mob.png" alt="hero" width="" height="">
                 </picture>
               </div>
-            </div>
+            </div> -->
             <div class="messengers">
               <ul class="list-nostyled  messengers__list">
                 <li class="messengers__item">
@@ -442,18 +441,5 @@
     </div>
   </section>
   <script src="js/bundle.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js">
-  <script>
-    SmoothScroll({ 
-      animationTime    : 1500,
-      stepSize         : 100,
-      // Acceleration
-      accelerationDelta : 50,  // 50
-      accelerationMax   : 1,   // 3
-      // Other
-      touchpadSupport   : true, // ignore touchpad by default
-      fixedBackground   : false
-    });
-  </script>
 </body>
 </html>
