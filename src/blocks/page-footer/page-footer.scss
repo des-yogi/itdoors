@@ -14,10 +14,6 @@
     display: inline-flex;
   }
 
-  &__inner {
-
-  }
-
   &__col-copyrights {
     @include col(xs, 12);
     @include col(xl, 4);

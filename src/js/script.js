@@ -29,14 +29,6 @@ $( document ).ready(function() {
   });
 });
 
-const Blazy = require('blazy');
-
-ready(function(){
-  var blazy = new Blazy({
-      selector: '.b-lazy'
-  });
-});
-
 $( document ).ready(function() {
   const tilt = $('.js-tilt').tilt({
     perspective:    500, // чем больше цирфа, тем меньше искажение
@@ -44,3 +36,37 @@ $( document ).ready(function() {
     speed:          1500
   });
 });
+
+const SmoothScroll = require('smoothscroll-for-websites');
+ready(function(){
+  SmoothScroll({
+    // Scrolling Core
+    animationTime    : 1200,
+    stepSize         : 100,
+    // Acceleration
+    accelerationDelta : 1,  // 50
+    accelerationMax   : 0,   // 3
+    // Other
+    touchpadSupport   : false, // ignore touchpad by default
+    fixedBackground   : false
+  });
+});
+
+const Blazy = require('blazy');
+ready(function(){
+  var blazy = new Blazy({
+    selector: '.b-lazy'
+  });
+});
+
+/*import LazyLoad from "vanilla-lazyload";
+ready(function(){
+  var lazyLoad = new LazyLoad({
+    elements_selector: '.lazy',
+    //class_loaded: 'inst-loaded',
+    callback_loaded: function () {
+      console.log('img loaded');
+    }
+  });
+});*/
+
