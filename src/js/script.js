@@ -70,3 +70,12 @@ ready(function(){
   });
 });*/
 
+$(document).ready(function(){
+  if(window.matchMedia('(min-width: 1366px)').matches){
+  // do functionality on screens bigger than 1366px
+    $("#sticker").sticky({
+      topSpacing: 100
+    });
+  }
+  return false;
+});

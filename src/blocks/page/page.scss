@@ -92,6 +92,38 @@
 
   &__content {
     flex-grow: 1;
+
+    &--noindex {
+      background-color: $white;
+
+      .page-header__inner {
+        background-color: $white;
+      }
+    }
+
+    &--divided {
+
+      .page-header__col-logo {
+
+        @media (min-width: $screen-xl) {
+          position: relative;
+        }
+
+        &::after {
+
+          @media (min-width: $screen-xl) {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 15px;
+            width: 1px;
+            background-color: $border-color;
+          }
+        }
+      }
+    }
   }
 
   &__footer-wrapper {
@@ -332,7 +364,11 @@ pre,
 address,
 figure {
   margin-top: 0;
-  margin-bottom: $typo-margin-vertical;
+  margin-bottom: 16px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: $typo-margin-vertical;
+  }
 }
 
 figure {
