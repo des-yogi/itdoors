@@ -1,0 +1,74 @@
+$color-tg:                    #0088cc !default;
+$color-vib:                   #7360f2 !default;
+$color-mess:                  #0084ff !default;
+$color-wapp:                  #25d366 !default;
+
+.messengers {
+
+  $block-name:  &; // #{$block-name}__element
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__item {
+    margin-bottom: 0;
+
+    & + & {
+      margin-left: 24px;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 24px;
+    height: 24px;
+    text-decoration: none !important;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background 0.2s ease-out;
+
+    &--tg {
+      background-size: 20px 16px;
+      background-image: svg-load('../blocks/messengers/bg-img/telegram.svg', fill=$icon-color);
+
+      &:hover,
+      &:focus {
+        background-image: svg-load('../blocks/messengers/bg-img/telegram.svg', fill=$color-tg);
+      }
+    }
+
+    &--vib {
+      background-size: 18px 18px;
+      background-image: svg-load('../blocks/messengers/bg-img/viber.svg', fill=$icon-color);
+
+      &:hover,
+      &:focus {
+        background-image: svg-load('../blocks/messengers/bg-img/viber.svg', fill=$color-vib);
+      }
+    }
+
+    &--mess {
+      background-size: 18px 18px;
+      background-image: svg-load('../blocks/messengers/bg-img/messenger.svg', fill=$icon-color);
+
+      &:hover,
+      &:focus {
+        background-image: svg-load('../blocks/messengers/bg-img/messenger.svg', fill=$color-mess);
+      }
+    }
+
+    &--wa {
+      background-size: 18px 18px;
+      background-image: svg-load('../blocks/messengers/bg-img/whatsapp.svg', fill=$icon-color);
+
+      &:hover,
+      &:focus {
+        background-image: svg-load('../blocks/messengers/bg-img/whatsapp.svg', fill=$color-wapp);
+      }
+    }
+  }
+}

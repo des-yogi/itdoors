@@ -58,6 +58,9 @@ ready(function(){
       // Make body overflow hidden so it's not scrollable
       document.documentElement.style.overflow = 'hidden';
 
+      // Make close in focus
+      document.querySelector('.drawer__close').focus();
+
       // Toggle accessibility
       toggleccessibility(trigger);
 
@@ -80,6 +83,9 @@ ready(function(){
 
       // Remove body overflow hidden
       document.documentElement.style.overflow = '';
+
+      // Make burger in focus
+      document.querySelector('.burger').focus();
 
       // Toggle accessibility
       toggleccessibility(childrenTrigger);

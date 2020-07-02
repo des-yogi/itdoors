@@ -57,7 +57,7 @@
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-svgmin": "^2.2.0",
+    "gulp-svgmin": "^3.0.0",
     "gulp-svgstore": "^7.0.1",
     "gulp.spritesmith": "^6.11.0",
     "husky": "^4.2.3",
@@ -88,6 +88,7 @@
     "jquery-sticky": "^1.0.4",
     "object-fit-images": "^3.2.4",
     "picturefill": "^3.0.3",
+    "smoothscroll-for-websites": "^1.4.10",
     "svg4everybody": "^2.1.9",
     "tilt.js": "^1.2.1"
   },

@@ -1,49 +1,81 @@
+$color-fb:                    #0078d7 !default;
+$color-in:                    #0077b5 !default;
+$color-insta:                 #833ab4 !default;
+$color-be:                    #1769ff !default;
+$color-dr:                    #ea4c89 !default;
+
 .social {
 
   $block-name:                &; // #{$block-name}__
 
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-top: $typo-margin-vertical;
-  margin-bottom: $typo-margin-vertical;
-  padding: 0;
-  list-style: none;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 
-  &__link-wrap {
-    margin-right: 10px;
+  &__item {
+    margin-bottom: 0;
+
+    & + & {
+      margin-left: 24px;
+    }
   }
 
   &__link {
     display: block;
-    padding: 5px;
-    background-color: $gray;
+    width: 24px;
+    height: 24px;
+    text-decoration: none !important;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background 0.2s ease-out;
+    background-size: 18px 18px;
 
-    #{$block-name}__link-wrap--fb & {
-      background-color: $color-fb;
+    &--drib {
+      background-image: svg-load('../blocks/social/bg-img/dribbble.svg', fill=$icon-color);
+
+      &:hover,
+      &:focus {
+        background-image: svg-load('../blocks/social/bg-img/dribbble.svg', fill=$color-dr);
+      }
     }
 
-    // #{$block-name}__link-wrap--vk & {
-    //   background-color: $color-vk;
-    // }
+    &--be {
+      background-image: svg-load('../blocks/social/bg-img/behance.svg', fill=$icon-color);
 
-    // #{$block-name}__link-wrap--tw & {
-    //   background-color: $color-tw;
-    // }
-
-    // #{$block-name}__link-wrap--gh & {
-    //   background-color: $color-gh;
-    // }
-
-    svg {
-      display: block;
-      width: 16px;
-      height: 16px;
-      fill: #fff;
+      &:hover,
+      &:focus {
+        background-image: svg-load('../blocks/social/bg-img/behance.svg', fill=$color-be);
+      }
     }
-  }
 
-  &__text {
-    @include hide-text;
+    &--insta {
+      background-image: svg-load('../blocks/social/bg-img/instagram.svg', fill=$icon-color);
+
+      &:hover,
+      &:focus {
+        background-image: svg-load('../blocks/social/bg-img/instagram.svg', fill=$color-insta);
+      }
+    }
+
+    &--in {
+      background-image: svg-load('../blocks/social/bg-img/linkedin.svg', fill=$icon-color);
+
+      &:hover,
+      &:focus {
+        background-image: svg-load('../blocks/social/bg-img/linkedin.svg', fill=$color-in);
+      }
+    }
+
+    &--fb {
+      background-image: svg-load('../blocks/social/bg-img/facebook.svg', fill=$icon-color);
+
+      &:hover,
+      &:focus {
+        background-image: svg-load('../blocks/social/bg-img/facebook.svg', fill=$color-fb);
+      }
+    }
   }
 }
