@@ -8,7 +8,6 @@
 
   @media (min-width: $screen-md) {
     display: flex;
-    //flex-wrap: wrap;
     justify-content: space-between;
     max-width: none;
     margin-left: 0;
@@ -24,7 +23,6 @@
     #{$block-name}__text-pointer {
 
       span {
-        //width: auto;
         font-size: 18px;
         margin-right: 15px;
         opacity: 1;
@@ -38,7 +36,6 @@
     @media (min-width: $screen-md) {
       display: flex;
       flex-direction: column;
-      //flex-wrap: wrap;
       justify-content: space-between;
       flex: 1 1 auto;
       margin-right: 30px;
@@ -84,7 +81,6 @@
       color: $text-color;
 
       @media (min-width: $screen-xl) {
-        //width: 0;
         font-size: 0;
         margin-right: 0;
         opacity: 0;
@@ -103,27 +99,17 @@
       background-position: center;
       background-size: 22px 12px;
       background-image: svg-load('../blocks/app-card/bg-img/arrow-right-btn.svg', fill=$text-color);
-
-      @media (min-width: $screen-xl) {}
     }
   }
 
   &__img {
 
     @media (min-width: $screen-md) {
-      //flex: 0 0 56.7%;
       width: 56.7%;
     }
 
     @media (min-width: $screen-xl) {
-      //flex: 0 0 485px;
       width: 485px;
-    }
-
-    img {
-      display: block;
-      object-fit: contain;
-      object-position: center;
     }
   }
 }

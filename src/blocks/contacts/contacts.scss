@@ -14,7 +14,7 @@
     @include col(md, 4);
 
     & + & {
-      margin-top: 40px;
+      margin-top: 50px;
 
       @media (min-width: $screen-md) {
         margin-top: 0;
@@ -46,6 +46,22 @@
 
     @media (min-width: $screen-xl) {
       margin-top: 30px;
+    }
+  }
+
+  &--extended {
+    padding-top: 0 !important;
+    padding-bottom: 0;
+
+    #{$block-name}__col {
+      @include col(xl, 12);
+    }
+
+    #{$block-name}__col + #{$block-name}__col {
+
+      @media (min-width: $screen-xl) {
+        margin-top: 50px;
+      }
     }
   }
 }
