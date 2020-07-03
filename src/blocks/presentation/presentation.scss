@@ -1,10 +1,5 @@
 .presentation {
-  //margin-bottom: 70px;
   background-color: $white;
-
-  /* @media (min-width: $screen-xl) {
-    margin-bottom: 50px;
-  } */
 
   $block-name:  &; // #{$block-name}__element
 
@@ -69,6 +64,14 @@
       display: block;
       width: 100%;
       height: auto;
+    }
+  }
+
+  &--apart {
+
+    @media (min-width: $screen-xl) {
+      padding-right: 40px;
+      padding-bottom: 50px;
     }
   }
 }
