@@ -27,7 +27,7 @@ ready(function(){
       }
 
       if( fileName ) {
-        label.innerHTML = fileName;
+        label.innerHTML = '<span class="field-file__info">' + fileName + '</span>';
       }
       else {
         label.innerHTML = labelVal;

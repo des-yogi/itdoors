@@ -33,6 +33,21 @@
         background-color: $border-color;
       }
     }
+
+    &--mod {
+      @include col(xs, 12);
+      @include col(xl, 3);
+      padding-top: 40px;
+      padding-bottom: 70px;
+      margin-bottom: 70px;
+      border-bottom: 1px solid $border-color;
+
+      @media (min-width: $screen-xl) {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: none;
+      }
+    }
   }
 
   &__main-col {
@@ -113,6 +128,19 @@
     }
   }
 
+  &__main-title {
+
+
+    &--relocated {
+      margin-bottom: 40px;
+
+      @media (min-width: $screen-md) {
+        margin-bottom: 70px;
+        padding-right: 30px;
+      }
+    }
+  }
+
   &__main-intro {
     position: relative;
     padding-bottom: 30px;
@@ -185,6 +213,14 @@
 
     @media (min-width: $screen-xl) {
       padding-left: 103px;
+    }
+  }
+
+  &--contacts {
+    border-bottom: none;
+
+    #{$block-name}__main-intro {
+      max-width: none;
     }
   }
 }
