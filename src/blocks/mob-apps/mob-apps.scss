@@ -47,6 +47,10 @@
 
   &__aside-nav {
     overflow-x: auto;
+
+    @media (min-width: $screen-xl) {
+      padding-bottom: 620px;
+    }
   }
 
   &__nav-list {
