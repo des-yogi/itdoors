@@ -16,12 +16,12 @@
   &__col {
     @include col(xs, 12);
     @include col(md, 6);
-    @include col(xl, 3, 8);
+    @include col(xl, 4, 8);
     margin-bottom: 50px;
 
     &--address {
       @include col(md, 12);
-      @include col(xl, 6, 8);
+      @include col(xl, 8, 8);
     }
   }
 

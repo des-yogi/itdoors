@@ -1,5 +1,4 @@
 .mob-apps {
-  border-bottom: 1px solid $border-color;
 
   @media (min-width: $screen-xl) {
     overflow-x: hidden;
@@ -47,6 +46,11 @@
         margin-bottom: 0;
         border-bottom: none;
       }
+    }
+
+    &:empty,
+    &--is-empty {
+      padding-top: 0;
     }
   }
 
@@ -143,16 +147,17 @@
 
   &__main-intro {
     position: relative;
-    padding-bottom: 30px;
+    padding-bottom: 70px;
     margin-bottom: 70px;
 
     @media (min-width: $screen-md) {
-      max-width: 82.5%;
-      padding-bottom: 70px;
+      //max-width: 82.5%;
+      padding-right: 17.5%;
     }
 
     @media (min-width: $screen-xl) {
-      max-width: 77.3%;
+      //max-width: 77.3%;
+      padding-right: 22.7%;
       padding-left: 103px;
     }
 
