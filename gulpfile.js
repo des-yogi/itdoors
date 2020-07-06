@@ -59,12 +59,12 @@ const faviconData = './faviconData.json';
 // Сообщение для компилируемых файлов
 let doNotEditMsg = '\n ВНИМАНИЕ! Этот файл генерируется автоматически.\n Любые изменения этого файла будут потеряны при следующей компиляции!\n Любое изменение проекта без возможности компиляции вылезет боком :)\n\n';
 
-// Настройки бьютификатора
+// Настройки бьютификатора (отключен сейчас)
 let prettyOption = {
   indent_size: 2,
   indent_char: ' ',
   unformatted: ['code', 'em', 'strong', 'span', 'i', 'b', 'br', 'script'],
-  content_unformatted: [],
+  //content_unformatted: [],
 };
 
 // Список и настройки плагинов postCSS
