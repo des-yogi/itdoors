@@ -22,7 +22,11 @@
     margin-bottom: 0;
 
     & + & {
-      margin-left: 42px;
+      margin-left: 32px;
+
+      @media (min-width: $menu-desktop-width) {
+        margin-left: 42px;
+      }
     }
 
     &.active {
