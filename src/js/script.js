@@ -71,11 +71,31 @@ ready(function(){
 });*/
 
 $(document).ready(function(){
-  if(window.matchMedia('(min-width: 1366px)').matches){
-  // do functionality on screens bigger than 1366px
-    $("#sticker").sticky({
-      topSpacing: 100
-    });
+
+  checkWidth();
+  window.addEventListener("resize", resizeThrottler, false);
+  var resizeTimeout;
+
+  function checkWidth() {
+    if (window.matchMedia('(min-width: 1366px)').matches){
+    // do functionality on screens bigger than 1366px
+      $("#sticker").sticky({
+        topSpacing: 100
+      });
+    } else {
+        $("#sticker").unstick();
+    }
   }
-  return false;
+
+  function resizeThrottler() {
+    // ignore resize events as long as an actualResizeHandler execution is in the queue
+    if ( !resizeTimeout ) {
+      resizeTimeout = setTimeout(function() {
+        resizeTimeout = null;
+        checkWidth();
+       // The actualResizeHandler will execute at a rate of 15fps
+       }, 100);
+    }
+  }
+
 });
