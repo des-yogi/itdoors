@@ -1,22 +1,39 @@
 .mob-apps {
+  padding-top: 40px;
 
   @media (min-width: $screen-xl) {
+    padding-top: 0;
     overflow-x: hidden;
   }
 
   $block-name:  &; // #{$block-name}__element
 
   &__aside-col {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    background-color: $body-bg;
+
     @include col(xs, 12);
     @include col(xl, 3);
-    padding-top: 20px;
+    //padding-top: 10px;
+    //padding-bottom: 5px;
     padding-right: 0;
-    margin-bottom: 40px;
+    //margin-bottom: 30px;
+
+    @media (min-width: $screen-md) {
+      padding-left: 40px;
+    }
 
     @media (min-width: $screen-xl) {
       position: relative;
+      z-index: 1;
       padding-top: 70px;
+      padding-left: 15px;
       margin-bottom: 0;
+      background-color: $white;
     }
 
     &::after {
@@ -34,12 +51,15 @@
     }
 
     &--mod {
+      position: static;
+      z-index: 0;
       @include col(xs, 12);
       @include col(xl, 3);
       padding-top: 40px;
       padding-bottom: 70px;
       margin-bottom: 70px;
       border-bottom: 1px solid $border-color;
+      background-color: $white;
 
       @media (min-width: $screen-xl) {
         padding-bottom: 0;
@@ -97,6 +117,14 @@
       }
     }
 
+    &:last-child {
+      padding-right: 15px;
+
+      @media (min-width: $screen-xl) {
+        padding-right: 0;
+      }
+    }
+
     &.active {
 
       #{$block-name}__nav-link {
@@ -109,7 +137,7 @@
   &__nav-link {
     display: inline-block;
     vertical-align: baseline;
-    padding: 5px 0;
+    padding: 20px 0;
     font-size: 16px;
     font-weight: 500;
     white-space: nowrap;
@@ -122,6 +150,7 @@
     }
 
     @media (min-width: $screen-xl) {
+      padding: 5px 0;
       font-size: 22px;
       white-space: normal;
     }
@@ -222,6 +251,7 @@
   }
 
   &--contacts {
+    padding-top: 0;
     border-bottom: none;
 
     #{$block-name}__main-intro {

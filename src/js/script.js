@@ -59,18 +59,46 @@ ready(function(){
   });
 });
 
-/*import LazyLoad from "vanilla-lazyload";
-ready(function(){
-  var lazyLoad = new LazyLoad({
-    elements_selector: '.lazy',
-    //class_loaded: 'inst-loaded',
-    callback_loaded: function () {
-      console.log('img loaded');
-    }
-  });
-});*/
-
 $(document).ready(function(){
+  // Обработка положения фикс. эл-та в моб. варианте
+  var targetElement = document.querySelector('#contact-us');
+
+  var visible = function (target) {
+    if (!target) { return; }
+    // Все позиции элемента
+    var targetPosition = {
+        top: window.pageYOffset + target.getBoundingClientRect().top,
+        left: window.pageXOffset + target.getBoundingClientRect().left,
+        right: window.pageXOffset + target.getBoundingClientRect().right,
+        bottom: window.pageYOffset + target.getBoundingClientRect().bottom
+      },
+      // Получаем позиции окна
+      windowPosition = {
+        top: window.pageYOffset,
+        left: window.pageXOffset,
+        right: window.pageXOffset + document.documentElement.clientWidth,
+        bottom: window.pageYOffset + document.documentElement.clientHeight
+      };
+
+    if (targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
+      targetPosition.top < windowPosition.bottom && // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
+      targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
+      targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
+      // Если элемент полностью видно, то запускаем следующий код
+      console.clear();
+      console.log('Вы видите элемент :)');
+      $("#sticker").slideUp(300);
+    } else {
+      // Если элемент не видно, то запускаем этот код
+      console.clear();
+      $("#sticker").slideDown(300);
+    };
+  };
+
+  var scrollHandler = function(e) {
+    visible(targetElement);
+  };
+  //
 
   checkWidth();
   window.addEventListener("resize", resizeThrottler, false);
@@ -79,11 +107,13 @@ $(document).ready(function(){
   function checkWidth() {
     if (window.matchMedia('(min-width: 1366px)').matches){
     // do functionality on screens bigger than 1366px
+      window.removeEventListener('scroll', scrollHandler);
       $("#sticker").sticky({
         topSpacing: 100
       });
     } else {
-        $("#sticker").unstick();
+      $("#sticker").unstick();
+      window.addEventListener('scroll', scrollHandler);
     }
   }
 
@@ -99,3 +129,45 @@ $(document).ready(function(){
   }
 
 });
+
+/*$(document).ready(function(){
+
+  var targetElement = document.querySelector('#contact-us');
+
+  var visible = function (target) {
+    // Все позиции элемента
+    var targetPosition = {
+        top: window.pageYOffset + target.getBoundingClientRect().top,
+        left: window.pageXOffset + target.getBoundingClientRect().left,
+        right: window.pageXOffset + target.getBoundingClientRect().right,
+        bottom: window.pageYOffset + target.getBoundingClientRect().bottom
+      },
+      // Получаем позиции окна
+      windowPosition = {
+        top: window.pageYOffset,
+        left: window.pageXOffset,
+        right: window.pageXOffset + document.documentElement.clientWidth,
+        bottom: window.pageYOffset + document.documentElement.clientHeight
+      };
+
+    if (targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
+      targetPosition.top < windowPosition.bottom && // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
+      targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
+      targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
+      // Если элемент полностью видно, то запускаем следующий код
+      console.clear();
+      console.log('Вы видите элемент :)');
+      $("#sticker").slideUp(300);
+    } else {
+      // Если элемент не видно, то запускаем этот код
+      console.clear();
+      $("#sticker").slideDown(300);
+    };
+  };
+
+  window.addEventListener('scroll', function() {
+    visible(targetElement);
+  });
+
+  visible(targetElement);
+});*/
