@@ -274,6 +274,10 @@ a:not(.icon):not(.special) {
   // }
 }
 
+a.icon {
+  text-decoration: none;
+}
+
 hr {
   box-sizing: content-box; // Проблема Firefox
   height: 0;               // Проблема Firefox
@@ -602,6 +606,7 @@ pre {
 }
 
 .subtitle {
+  margin-bottom: 16px;
   font-family: $font-family--title;
   font-size: 24px;
   font-weight: 600;

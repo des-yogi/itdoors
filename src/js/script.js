@@ -55,7 +55,12 @@ ready(function(){
 const Blazy = require('blazy');
 ready(function(){
   var blazy = new Blazy({
-    selector: '.b-lazy'
+    selector: '.b-lazy',
+    offset:   200
+  });
+  var vlazy = new Blazy({
+    selector: '.lazy-video',
+    offset:   300
   });
 });
 
@@ -171,3 +176,12 @@ $(document).ready(function(){
 
   visible(targetElement);
 });*/
+
+import simpleParallax from 'simple-parallax-js';
+ready(function(){
+  var images = document.querySelectorAll('.parallax-img');
+  new simpleParallax(images, {
+    delay: .8,
+    transition: 'cubic-bezier(0,0,0,1)'
+  });
+});
