@@ -10,6 +10,12 @@
 
   $block-name:  &; // #{$block-name}__element
 
+  &__intro-col {
+    @include col(xs, 12);
+    @include col(md, 10);
+    @include col(xl, 6);
+  }
+
   &__title,
   &__slogan {
     margin-top: 0;

@@ -29,6 +29,7 @@ let config = {
     'blazy/blazy.js',
     //'vanilla-lazyload/dist/lazyload.esm.js',
     'svg4everybody/dist/svg4everybody.js',
+    'simple-parallax-js/dist/simpleParallax.js',
     'jquery/dist/jquery.js',
     'object-fit-images/dist/ofi.js',
     'bootstrap/dist/js/bootstrap.bundle.js', // полный бандл BS4.5.0
