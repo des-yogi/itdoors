@@ -85,7 +85,7 @@
       }
 
       @media (min-width: $menu-desktop-width) {
-        padding: 0 12px;
+        padding: 0 12px !important;
       }
 
       &:nth-child(odd) {
