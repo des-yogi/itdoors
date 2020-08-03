@@ -89,6 +89,7 @@
 
     @media (min-width: $screen-xl) {
       padding-bottom: 620px;
+      pointer-events: none;
     }
   }
 
@@ -98,6 +99,7 @@
 
     @media (min-width: $screen-xl) {
       display: block;
+      pointer-events: auto;
     }
   }
 
@@ -206,6 +208,7 @@
       }
 
       @media (min-width: $screen-xl) {
+        z-index: 1;
         left: -30px;
         right: unset;
         width: 100vw;
