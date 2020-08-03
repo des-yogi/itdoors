@@ -30,9 +30,9 @@ let config = {
     //'vanilla-lazyload/dist/lazyload.esm.js',
     'svg4everybody/dist/svg4everybody.js',
     'simple-parallax-js/dist/simpleParallax.js',
-    //'jquery/dist/jquery.js',
+    'jquery/dist/jquery.js',
     'object-fit-images/dist/ofi.js',
-    //'bootstrap/dist/js/bootstrap.bundle.js', // полный бандл BS4.5.0
+    'bootstrap/dist/js/bootstrap.bundle.js', // полный бандл BS4.5.0
     'tilt.js/dest/tilt.jquery.js',
     'jquery-sticky/jquery.sticky.js',
     'smoothscroll-for-websites/SmoothScroll.js', // в принципе работает, но требует тестирования и настройки и проверки в Сафари !
@@ -47,7 +47,6 @@ let config = {
     './script.js',
   ],
   'addAssets': {
-    'node_modules/jquery/dist/jquery.js': 'libs/',
     'src/fonts/*.{woff,woff2}': 'fonts/',
     'src/img/*.{png,svg,gif,ico,jpg,jpeg,webp}': 'img/',
     'src/video/*.{mp4,webm}': 'video/',

@@ -318,6 +318,20 @@ h1,
   @media (min-width: $menu-desktop-width) {
     font-size: $font-size-h1 * 1.2381;
   }
+
+  &--enlarged {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.15;
+
+    @media (min-width: $screen-md) {
+      font-size: 52px;
+    }
+
+    @media (min-width: $screen-xl) {
+      font-size: 64px;
+    }
+  }
 }
 
 h2,
