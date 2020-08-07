@@ -93,6 +93,31 @@
   &__content {
     flex-grow: 1;
 
+    &--index {
+      background-repeat: no-repeat;
+      background-size: 470px;
+      background-position: -50px 440px;
+      background-image: svg-load('../blocks/hero/bg-img/blured-circle.svg');
+
+      @media (min-width: $screen-sm) {
+        background-position: 0 400px;
+      }
+
+      @media (min-width: $screen-md) {
+        background-position: 130% 135px;
+        background-size: 530px;
+      }
+
+      @media (min-width: $screen-lg) {
+        background-position: 90% 135px;
+      }
+
+      @media (min-width: $screen-xl) {
+        background-position: 80% 90px;
+        background-size: 860px;
+      }
+    }
+
     &--noindex {
       background-color: $white;
 
@@ -460,11 +485,13 @@ sup {
   font-size: $font-size-sm;
 }
 
-// .mark,
-// mark {
-//   background: rgba($color-warning, 0.3);
-//   padding: 0.1em 0.3em;
-// }
+.mark,
+mark {
+  position: relative;
+  z-index: -1;
+  background: $main-color;
+  padding: 0 5px;
+}
 
 b,
 strong {
