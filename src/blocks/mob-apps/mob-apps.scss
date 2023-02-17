@@ -1,0 +1,264 @@
+.mob-apps {
+  padding-top: 40px;
+
+  @media (min-width: $screen-xl) {
+    padding-top: 0;
+    overflow-x: hidden;
+  }
+
+  $block-name:  &; // #{$block-name}__element
+
+  &__aside-col {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    background-color: $body-bg;
+
+    @include col(xs, 12);
+    @include col(xl, 3);
+    //padding-top: 10px;
+    //padding-bottom: 5px;
+    padding-right: 0;
+    //margin-bottom: 30px;
+
+    @media (min-width: $screen-md) {
+      padding-left: 40px;
+    }
+
+    @media (min-width: $screen-xl) {
+      position: relative;
+      z-index: 1;
+      padding-top: 70px;
+      padding-left: 15px;
+      margin-bottom: 0;
+      background-color: $white;
+    }
+
+    &::after {
+
+      @media (min-width: $screen-xl) {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 15px;
+        width: 1px;
+        background-color: $border-color;
+      }
+    }
+
+    &--mod {
+      position: static;
+      z-index: 0;
+      @include col(xs, 12);
+      @include col(xl, 3);
+      padding-top: 40px;
+      padding-bottom: 70px;
+      margin-bottom: 70px;
+      border-bottom: 1px solid $border-color;
+      background-color: $white;
+
+      @media (min-width: $screen-xl) {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: none;
+      }
+    }
+
+    &:empty,
+    &--is-empty {
+      padding-top: 0;
+    }
+  }
+
+  &__main-col {
+    @include col(xs, 12);
+    @include col(xl, 9);
+    padding-bottom: 65px;
+
+    @media (min-width: $screen-xl) {
+      padding-top: 60px;
+    }
+  }
+
+  &__aside-nav {
+    overflow-x: auto;
+
+    @media (min-width: $screen-xl) {
+      padding-bottom: 620px;
+      pointer-events: none;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    align-items: baseline;
+
+    @media (min-width: $screen-xl) {
+      display: block;
+      pointer-events: auto;
+    }
+  }
+
+  &__nav-item {
+    margin-bottom: 0;
+
+    & + & {
+      margin-left: 32px;
+
+      @media (min-width: $screen-md) {
+        margin-left: 42px;
+      }
+
+      @media (min-width: $screen-xl) {
+        margin-top: 40px;
+        margin-left: 0;
+      }
+    }
+
+    &:last-child {
+      padding-right: 15px;
+
+      @media (min-width: $screen-xl) {
+        padding-right: 0;
+      }
+    }
+
+    &.active {
+
+      #{$block-name}__nav-link {
+        color: $text-color;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__nav-link {
+    display: inline-block;
+    vertical-align: baseline;
+    padding: 20px 0;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+    color: $text-muted;
+    transition: color 0.2s ease-out;
+
+    @media (min-width: $screen-md) {
+      font-size: 20px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding: 5px 0;
+      font-size: 22px;
+      white-space: normal;
+    }
+
+    &:hover,
+    &:focus {
+      color: $text-color;
+    }
+  }
+
+  &__main-title {
+
+
+    &--relocated {
+      margin-bottom: 40px;
+
+      @media (min-width: $screen-md) {
+        margin-bottom: 70px;
+        padding-right: 30px;
+      }
+    }
+  }
+
+  &__main-intro {
+    position: relative;
+    padding-bottom: 70px;
+    //margin-bottom: 70px;
+
+    @media (min-width: $screen-md) {
+      //max-width: 82.5%;
+      padding-right: 17.5%;
+    }
+
+    @media (min-width: $screen-xl) {
+      //max-width: 77.3%;
+      padding-right: 22.7%;
+      padding-left: 103px;
+    }
+
+    /* &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: -15px;
+      right: -15px;
+      height: 1px;
+      background-color: $border-color;
+
+      @media (min-width: $screen-md) {
+        left: -40px;
+        right: -40px;
+      }
+
+      @media (min-width: $screen-xl) {
+        z-index: 1;
+        left: -30px;
+        right: unset;
+        width: 100vw;
+      }
+    } */
+  }
+
+  &__chapter {
+    margin-top: 40px;
+    font-weight: 500;
+    font-size: 20px;
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+    }
+  }
+
+  &__chapter-item {
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    & + & {
+
+      @media (min-width: $screen-md) {
+        margin-left: 40px;
+      }
+    }
+  }
+
+  &__main-content {
+
+    @media (min-width: $screen-xl) {
+      padding-left: 103px;
+    }
+  }
+
+  &--contacts {
+    padding-top: 0;
+    border-bottom: none;
+
+    #{$block-name}__main-intro {
+      max-width: none;
+    }
+  }
+}

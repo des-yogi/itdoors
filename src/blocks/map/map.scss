@@ -1,0 +1,36 @@
+.map {
+  position: relative;
+  height: 400px;
+  margin-bottom: 70px;
+
+  $block-name:  &; // #{$block-name}__element
+
+  &__inner {
+    display: block;
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: -15px;
+    right: -15px;
+    height: 100%;
+    background-color: $gray-lightest;
+
+    @media (min-width: $screen-md) {
+      left: -40px;
+      right: -40px;
+    }
+
+    @media (min-width: $screen-xl) {
+      //z-index: 1;
+      left: -30px;
+      right: unset;
+      width: 100vw;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

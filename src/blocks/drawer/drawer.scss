@@ -1,0 +1,131 @@
+.drawer {
+  display: none;
+
+  $block-name:                &; // #{$block-name}__element
+
+  // .dropdown-menu {
+  //   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  // }
+
+  &.is-active {
+    display: block;
+  }
+
+  &.is-visible {
+
+    #{$block-name}__wrapper {
+      transform: translateX(0);
+    }
+
+    #{$block-name}__overlay {
+      opacity: 0.82;
+      backdrop-filter: blur(16px);
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 15px;
+    //border-bottom: 2px solid $border-color;
+
+    @media (min-width: $screen-md) {
+      padding: 40px 40px 40px 60px;
+    }
+  }
+
+  &__close {
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 22px 22px;
+    background-image: svg-load('../blocks/drawer/bg-img/close-icon.svg', fill=$text-color);
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-image: svg-load('../blocks/drawer/bg-img/close-icon.svg', fill=$color-danger);
+    }
+  }
+
+  &__wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 480px;
+    z-index: 9999;
+    overflow: auto;
+    transition: transform 0.3s;
+    will-change: transform;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    //-webkit-transform: translateX(103%);
+    transform: translateX(103%); /* extra 3% because of box-shadow */
+    -webkit-overflow-scrolling: touch; /* enables momentum scrolling in iOS overflow elements */
+    box-shadow: none;
+
+    @media (min-width: $screen-md) {
+      max-width: 430px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+    flex-grow: 1;
+    padding: 20px 15px 40px;
+
+    @media (min-width: $screen-md) {
+      justify-content: flex-start;
+      padding: 30px 40px 70px 60px;
+    }
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+    opacity: 0;
+    transition: opacity 0.3s;
+    will-change: opacity;
+    background-color: #fff;
+    user-select: none;
+  }
+
+  &__links-block {
+    display: none;
+
+    @media (min-width: $screen-md) {
+      display: block;
+      margin-top: auto;
+    }
+  }
+
+  &__section {
+    margin-top: 50px;
+  }
+
+  &__links-title {
+    margin-top: 0;
+    color: $text-muted;
+  }
+}

@@ -1,0 +1,118 @@
+.about {
+  padding-top: 40px;
+  margin-bottom: 70px;
+
+  @media (min-width: $screen-xl) {
+    padding-top: 70px;
+  }
+
+  $block-name:  &; // #{$block-name}__element
+
+  &__text-col {
+    @include col(xs, 12);
+    @include col(md, 10);
+    @include col-offset(xl, 2);
+    @include col(xl, 8);
+
+    &--extended {
+      @include col(md, 12);
+      @include col(xl, 10);
+    }
+  }
+
+  &__pre-title {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-family: $font-family--title;
+    letter-spacing: 0.035em;
+    color: $text-muted;
+  }
+
+  &__intro-text {
+    font-weight: 500;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    margin-bottom: 70px;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__achievements-text-col {
+    @include col(xs, 12);
+    @include col(xl, 3, 10);
+
+    @media (min-width: $screen-xl) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__achievements-img-col {
+    @include col(xs, 12);
+   // @include col(sm, 10);
+    @include col(md, 10);
+    @include col(xl, 7, 10);
+  }
+
+  &__achievements-list {
+    font-family: $font-family--title;
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    @media (min-width: $screen-xl) {
+      display: block;
+    }
+  }
+
+  &__achievements-item {
+    margin-bottom: 30px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 40px;
+      width: calc(100% / 3 - 60px);
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 70px;
+      width: 100%;
+    }
+
+    & + & {
+
+      @media (min-width: $screen-md) and (max-width: $screen-xl - 1) {
+        margin-left: 30px;
+      }
+    }
+
+    &:last-child {
+
+      @media (min-width: $screen-xl) {
+        margin-bottom: 0;
+      }
+    }
+
+    &:not(span) {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    span {
+      display: block;
+      margin-bottom: 16px;
+      font-size: 32px;
+      font-weight: 800;
+    }
+  }
+}

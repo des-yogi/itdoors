@@ -1,0 +1,115 @@
+.app-card {
+  display: block;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  text-decoration: none;
+
+  @media (min-width: $screen-md) {
+    display: flex;
+    justify-content: space-between;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 70px;
+  }
+
+  $block-name:  &; // #{$block-name}__element
+
+  &:hover,
+  &:focus {
+
+    #{$block-name}__text-pointer {
+
+      span {
+        font-size: 18px;
+        margin-right: 15px;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__text {
+    margin-bottom: 20px;
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1 1 auto;
+      margin-right: 30px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__text-top {
+    margin-bottom: 24px;
+
+    @media (min-width: $screen-md) {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  &__descr {
+    color: $text-muted;
+  }
+
+  &__chapter {
+    display: block;
+    letter-spacing: 0.035em;
+    color: $text-muted;
+  }
+
+  &__text-pointer {
+    overflow-x: hidden;
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      height: 32px;
+      margin-right: 15px;
+      font-size: 18px;
+      font-weight: 700;
+      font-family: $font-family--title;
+      line-height: 30px;
+      color: $text-color;
+
+      @media (min-width: $screen-xl) {
+        font-size: 0;
+        margin-right: 0;
+        opacity: 0;
+        transition: all 0.2s ease-out;
+      }
+    }
+
+    &::after {
+      display: inline-block;
+      vertical-align: middle;
+      content: "";
+      width: 32px;
+      height: 32px;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 22px 12px;
+      background-image: svg-load('../blocks/app-card/bg-img/arrow-right-btn.svg', fill=$text-color);
+    }
+  }
+
+  &__img {
+
+    @media (min-width: $screen-md) {
+      width: 56.7%;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 485px;
+    }
+  }
+}

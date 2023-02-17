@@ -1,0 +1,98 @@
+<!--DEV
+@ @include('blocks/drawer/drawer.html')
+
+<a href="#" data-drawer-trigger="" aria-controls="drawer-menu" aria-expanded="false" class="btn">Open Drawer</a>
+
+-->
+
+<section class="drawer" id="mob-menu" data-drawer-target>
+  <div class="drawer__overlay" data-drawer-close tabindex="-1"></div>
+  <div class="drawer__wrapper">
+    <div class="drawer__header">
+      <div class="drawer__title">
+        <img src="img/it-doors-logo-resp.svg" alt="Logo" width="112" height="42">
+      </div>
+      <button class="drawer__close" data-drawer-close="" aria-label="Закрыть Drawer"></button>
+    </div>
+
+    <div class="drawer__content">
+
+      <nav class="mobile-nav">
+        <ul class="list-nostyled  mobile-nav__list">
+          <li class="mobile-nav__item"> <!--   active -->
+            <a href="mobile-apps.html" class="special  mobile-nav__link">Services & Cases</a>
+          </li>
+          <li class="mobile-nav__item">
+            <a href="products.html" class="special  mobile-nav__link">Products</a>
+          </li>
+          <li class="mobile-nav__item">
+            <a href="about-us.html" class="special  mobile-nav__link">About</a>
+          </li>
+          <li class="mobile-nav__item">
+            <a href="contacts.html" class="special  mobile-nav__link">Contacts</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- <ul class="lang-list  lang-list--mobile  list-nostyled">
+        <li class="lang-list__item">
+          <a href="#" class="special  lang-list__link">Укр</a>
+        </li>
+        <li class="lang-list__item">
+          <a href="#" class="special  lang-list__link">Рус</a>
+        </li>
+        <li class="lang-list__item  active">
+          <a href="#" class="special  lang-list__link">Eng</a>
+        </li>
+      </ul> -->
+
+      <div class="drawer__links-block">
+
+        <section class="drawer__section  drawer__links-messengers">
+          <h4 class="drawer__links-title">Communicate</h4>
+          <div class="messengers">
+            <ul class="list-nostyled  messengers__list">
+              <li class="messengers__item">
+                <a href="#" class="icon  messengers__link  messengers__link--tg" target="_blank" rel="nofollow noopener" title="Telegram"></a>
+              </li>
+              <li class="messengers__item">
+                <a href="#" class="icon  messengers__link  messengers__link--vib" target="_blank" rel="nofollow noopener" title="Viber"></a>
+              </li>
+              <li class="messengers__item">
+                <a href="#" class="icon  messengers__link  messengers__link--mess" target="_blank" rel="nofollow noopener" title="FB Messenger"></a>
+              </li>
+              <li class="messengers__item">
+                <a href="#" class="icon  messengers__link  messengers__link--wa" target="_blank" rel="nofollow noopener" title="WhatsApp"></a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="drawer__section  drawer__links-socials">
+          <h4 class="drawer__links-title">Follow</h4>
+          <div class="social">
+            <ul class="list-nostyled  social__list">
+              <li class="social__item">
+                <a href="#" class="icon  social__link  social__link--drib" target="_blank" rel="nofollow noopener" title="Dribbble"></a>
+              </li>
+              <li class="social__item">
+                <a href="#" class="icon  social__link  social__link--be" target="_blank" rel="nofollow noopener" title="Behance"></a>
+              </li>
+              <li class="social__item">
+                <a href="#" class="icon  social__link  social__link--insta" target="_blank" rel="nofollow noopener" title="Instagram"></a>
+              </li>
+              <li class="social__item">
+                <a href="#" class="icon  social__link  social__link--in" target="_blank" rel="nofollow noopener" title="LinkedIn"></a>
+              </li>
+              <li class="social__item">
+                <a href="#" class="icon  social__link  social__link--fb" target="_blank" rel="nofollow noopener" title="Facebook"></a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+  </div>
+</section>

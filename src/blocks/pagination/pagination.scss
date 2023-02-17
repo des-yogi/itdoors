@@ -1,0 +1,112 @@
+$line-height:                 1.375em !default;
+$text-color:                  hsl(0, 0%, 10%) !default;
+$border-color:                hsl(0, 0%, 60%) !default;
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+
+  // @media (min-width: $screen-md) {
+  //   justify-content: flex-start;
+  // }
+
+  $block-name:                &; // #{$block-name}__element
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-right: 24px;
+    margin-bottom: 0;
+
+    // @media (min-width: $screen-xl) {
+    //   margin-right: 15px;
+    // }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.active {
+
+      a {
+        color: $text-color;
+        pointer-events: none;
+      }
+    }
+
+    &--prev {
+      margin-right: auto !important;
+    }
+
+    &--next {
+      margin-left: auto !important;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    //width: 32px;
+    padding: 0 2px;
+    height: 32px;
+    font-family: $font-family--title;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    color: $text-muted;
+    background-color: $white;
+    border-radius: 0;
+    user-select: none;
+    transition: all 0.2s ease-out;
+
+    @media (min-width: $screen-md) {
+      font-size: 16px;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: currentColor;
+      transition: width 0.25s ease-out;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $text-color;
+      //background-color: $main-color;
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &--disabled,
+    &:disabled {
+      //color: $text-muted;
+      //background-color: $light-bg;
+      pointer-events: none;
+    }
+  }
+}

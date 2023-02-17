@@ -1,0 +1,576 @@
+.hero {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+
+  @media (min-width: $screen-md) {
+    margin-bottom: 70px;
+  }
+
+  $block-name:  &; // #{$block-name}__element
+
+  .messengers {
+    display: flex;
+    // justify-content: center;
+
+    // @media (min-width: $screen-xl) {
+    //   justify-content: flex-start;
+    // }
+  }
+
+  &__row {
+    margin-bottom: 50px;
+
+    @media (min-width: $screen-md) {
+      align-items: center;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__col-text {
+    @include col(xs, 12);
+    @include col(md, 5);
+
+    @media (min-width: $screen-xs) and (max-width: $screen-md - 1) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__col-img {
+    @include col(xs, 12);
+    @include col(md, 7);
+  }
+
+  &__img {
+
+    svg {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__slogan {
+    display: block;
+    margin-bottom: 30px;
+    font-size: 36px;
+    //text-align: left;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 50px;
+      font-size: 42px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 90px;
+      // font-weight: 600;
+      font-size: 52px;
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+  // &__trends {
+
+  // }
+
+  &__trends-list {
+
+    @media (min-width: $screen-xl) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__trends-item {
+    margin-bottom: 25px;
+
+    @media (min-width: $screen-xl) {
+      //margin-bottom: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__trends-link {
+    position: relative;
+    z-index: 1;
+    font-size: 22px;
+    font-weight: 800 !important;
+    line-height: 1.15;
+    text-decoration: none !important;
+    //white-space: nowrap;
+    user-select: none;
+    color: $title-color;
+    transition: all 0.3s ease-out;
+
+    @media (min-width: $screen-md) {
+      white-space: nowrap;
+    }
+
+    @media (min-width: $screen-lg) {
+      font-size: 26px;
+    }
+
+    @media (min-width: $screen-xl) {
+      font-size: 36px;
+    }
+
+    &::before {
+      display: block;
+      content: "";
+      position: absolute;
+      //left: -100%;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 18px;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-size: 20px 18px;
+      background-position: center;
+      background-image: svg-load('../blocks/hero/bg-img/arrow-banner.svg', fill=$title-color);
+      opacity: 0;
+      transition: all 0.2s ease-out;
+
+      @media (min-width: $screen-xl) {
+        width: 28px;
+        height: 25px;
+        background-size: 28px 25px;
+      }
+    }
+
+
+    &:hover,
+    &:focus {
+      padding-left: 50px;
+      outline: none;
+
+      &::before {
+        left: 5px;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+@keyframes animate-svg-stroke-1 {
+  0% {
+    stroke-dashoffset: 1197.57470703125px;
+    stroke-dasharray: 1197.57470703125px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.svg-banner-1 {
+  animation: animate-svg-stroke-1 5s ease 0s both,
+               animate-svg-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
+}
+
+@keyframes animate-svg-stroke-2 {
+  0% {
+    stroke-dashoffset: 224.2764892578125px;
+    stroke-dasharray: 224.2764892578125px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.svg-banner-2 {
+  animation: animate-svg-stroke-2 5s ease 0.15s both,
+               animate-svg-fill-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both;
+}
+
+@keyframes animate-svg-stroke-3 {
+  0% {
+    stroke-dashoffset: 72.12753295898438px;
+    stroke-dasharray: 72.12753295898438px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animate-svg-fill-3 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(156, 255, 229);
+  }
+}
+
+.svg-banner-3 {
+  animation: animate-svg-stroke-3 5s ease 0.3s both,
+               animate-svg-fill-3 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both;
+}
+
+@keyframes animate-svg-stroke-4 {
+  0% {
+    stroke-dashoffset: 444.1902160644531px;
+    stroke-dasharray: 444.1902160644531px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.svg-banner-4 {
+  animation: animate-svg-stroke-4 5s ease 0.44999999999999996s both,
+               animate-svg-fill-4 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1s both;
+}
+
+@keyframes animate-svg-stroke-5 {
+  0% {
+    stroke-dashoffset: 788.452392578125px;
+    stroke-dasharray: 788.452392578125px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.svg-banner-5 {
+  animation: animate-svg-stroke-5 5s ease 0.6s both,
+               animate-svg-fill-5 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2000000000000002s both;
+}
+
+@keyframes animate-svg-stroke-6 {
+  0% {
+    stroke-dashoffset: 72.12751770019531px;
+    stroke-dasharray: 72.12751770019531px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animate-svg-fill-6 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(156, 255, 229);
+  }
+}
+
+.svg-banner-6 {
+  animation: animate-svg-stroke-6 5s ease 0.75s both,
+               animate-svg-fill-6 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.3s both;
+}
+
+@keyframes animate-svg-stroke-7 {
+  0% {
+    stroke-dashoffset: 388.6192626953125px;
+    stroke-dasharray: 388.6192626953125px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.svg-banner-7 {
+  animation: animate-svg-stroke-7 5s ease 0.8999999999999999s both,
+               animate-svg-fill-7 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4000000000000001s both;
+}
+
+@keyframes animate-svg-stroke-8 {
+  0% {
+    stroke-dashoffset: 276.2752990722656px;
+    stroke-dasharray: 276.2752990722656px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.svg-banner-8 {
+  animation: animate-svg-stroke-8 5s ease 1.05s both,
+               animate-svg-fill-8 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.5s both;
+}
+
+@keyframes animate-svg-stroke-9 {
+  0% {
+    stroke-dashoffset: 354.05267333984375px;
+    stroke-dasharray: 354.05267333984375px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animate-svg-fill-9 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(156, 255, 229);
+  }
+}
+
+.svg-banner-9 {
+  animation: animate-svg-stroke-9 5s ease 1.2s both,
+               animate-svg-fill-9 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.6s both;
+}
+
+@keyframes animate-svg-stroke-10 {
+  0% {
+    stroke-dashoffset: 224.19346618652344px;
+    stroke-dasharray: 224.19346618652344px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.svg-banner-10 {
+  animation: animate-svg-stroke-10 5s ease 1.3499999999999999s both,
+               animate-svg-fill-10 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.7000000000000002s both;
+}
+
+@keyframes animate-svg-stroke-11 {
+  0% {
+    stroke-dashoffset: 75.65130615234375px;
+    stroke-dasharray: 75.65130615234375px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animate-svg-fill-11 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(40, 39, 53);
+  }
+}
+
+.svg-banner-11 {
+  animation: animate-svg-stroke-11 5s ease 1.5s both,
+               animate-svg-fill-11 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.8s both;
+}
+
+@keyframes animate-svg-stroke-12 {
+  0% {
+    stroke-dashoffset: 573.7284545898438px;
+    stroke-dasharray: 573.7284545898438px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.svg-banner-12 {
+  animation: animate-svg-stroke-12 5s ease 1.65s both,
+               animate-svg-fill-12 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.9000000000000001s both;
+}
+
+@keyframes animate-svg-stroke-13 {
+  0% {
+    stroke-dashoffset: 350.8116455078125px;
+    stroke-dasharray: 350.8116455078125px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.svg-banner-13 {
+  animation: animate-svg-stroke-13 5s ease 1.7999999999999998s both,
+               animate-svg-fill-13 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2s both;
+}
+
+@keyframes animate-svg-stroke-14 {
+  0% {
+    stroke-dashoffset: 75.56346130371094px;
+    stroke-dasharray: 75.56346130371094px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animate-svg-fill-14 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(40, 39, 53);
+  }
+}
+
+.svg-banner-14 {
+  animation: animate-svg-stroke-14 5s ease 1.95s both,
+               animate-svg-fill-14 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.1s both;
+}
+
+@keyframes animate-svg-stroke-15 {
+  0% {
+    stroke-dashoffset: 544.9208374023438px;
+    stroke-dasharray: 544.9208374023438px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animate-svg-fill-15 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(156, 255, 229);
+  }
+}
+
+.svg-banner-15 {
+  animation: animate-svg-stroke-15 5s ease 2.1s both,
+               animate-svg-fill-15 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.2s both;
+}
+
+@keyframes animate-svg-stroke-16 {
+  0% {
+    stroke-dashoffset: 5693.66015625px;
+    stroke-dasharray: 5693.66015625px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.svg-banner-16 {
+  animation: animate-svg-stroke-16 5s ease 2.25s both,
+               animate-svg-fill-16 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.3s both;
+}
+
+@keyframes animate-svg-stroke-17 {
+  0% {
+    stroke-dashoffset: 247.3157196044922px;
+    stroke-dasharray: 247.3157196044922px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.svg-banner-17 {
+  animation: animate-svg-stroke-17 5s ease 2.4s both,
+               animate-svg-fill-17 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.4000000000000004s both;
+}
+
+@keyframes animate-svg-stroke-18 {
+  0% {
+    stroke-dashoffset: 347.15167236328125px;
+    stroke-dasharray: 347.15167236328125px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animate-svg-fill-18 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(156, 255, 229);
+  }
+}
+
+.svg-banner-18 {
+  animation: animate-svg-stroke-18 5s ease 2.55s both,
+               animate-svg-fill-18 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.5s both;
+}
+
+@keyframes animate-svg-stroke-19 {
+  0% {
+    stroke-dashoffset: 604.9253540039062px;
+    stroke-dasharray: 604.9253540039062px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.svg-banner-19 {
+  animation: animate-svg-stroke-19 5s ease 2.6999999999999997s both,
+               animate-svg-fill-19 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.6s both;
+}
+
+@keyframes animate-svg-stroke-20 {
+  0% {
+    stroke-dashoffset: 181.66000366210938px;
+    stroke-dasharray: 181.66000366210938px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animate-svg-fill-20 {
+  0% {
+    fill: transparent;
+  }
+
+  100% {
+    fill: rgb(156, 255, 229);
+  }
+}
+
+.svg-banner-20 {
+  animation: animate-svg-stroke-20 5s ease 2.85s both,
+               animate-svg-fill-20 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.7s both;
+}
+
+@keyframes animate-svg-stroke-21 {
+  0% {
+    stroke-dashoffset: 603.992431640625px;
+    stroke-dasharray: 603.992431640625px;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.svg-banner-21 {
+  animation: animate-svg-stroke-21 5s ease 3s both,
+               animate-svg-fill-21 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 2.8s both;
+}

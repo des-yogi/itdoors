@@ -1,0 +1,75 @@
+.embed-responsive {
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  //margin-top: $typo-margin-vertical;
+  //margin-bottom: $typo-margin-vertical;
+  padding: 0;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: percentage(9 / 16); // по умолчанию ожидается вставка в формате 16/9
+  }
+
+  // embed,
+  // object,
+  img,
+  iframe,
+  video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  img {
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &--21-9 {
+    // модификатор на случай вставки 21/9
+
+    &::before {
+      padding-top: percentage(9 / 21);
+    }
+  }
+
+  &--4-3 {
+    // модификатор на случай вставки 4/3
+
+    &::before {
+      padding-top: percentage(3 / 4);
+    }
+  }
+
+  &--4-5 {
+    // модификатор на случай вставки 4/5
+
+    &::before {
+      padding-top: percentage(5 / 4);
+    }
+  }
+
+  &--3-2 {
+    // модификатор на случай вставки 3/2
+
+    &::before {
+      padding-top: percentage(2 / 3);
+    }
+  }
+
+  &--1-1 {
+    // модификатор на случай вставки 1/1
+
+    &::before {
+      padding-top: percentage(1 / 1);
+    }
+  }
+}

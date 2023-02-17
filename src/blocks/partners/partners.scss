@@ -1,0 +1,32 @@
+.partners {
+
+  $block-name:  &; // #{$block-name}__element
+
+  &__col {
+    @include col(xs, 12);
+    @include col-offset(xl, 2);
+    @include col(xl, 8);
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__item-col {
+    @include col(xs, 6);
+    @include col(md, 3);
+    @include col(xl, 2, 8);
+
+    img {
+      max-width: 200px;
+      max-height: 120px;
+      object-fit: contain;
+    }
+  }
+}

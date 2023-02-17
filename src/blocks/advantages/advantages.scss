@@ -1,0 +1,31 @@
+.advantages {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-bottom: 70px;
+  background-color: $body-bg;
+
+  @media (min-width: $screen-md) {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  $block-name:  &; // #{$block-name}__element
+
+  &__col {
+    @include col(xs, 12);
+    @include col(md, 10);
+    @include col-offset(xl, 2);
+    @include col(xl, 8);
+
+    p {
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+}

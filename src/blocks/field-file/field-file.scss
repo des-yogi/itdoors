@@ -1,0 +1,101 @@
+.field-file {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: block;
+  margin-bottom: $typo-margin-vertical;
+
+  &__name {
+    @include field-name;
+  }
+
+  &__input-wrap {
+    display: block;
+    position: relative;
+  }
+
+  &__input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+
+    &:active ~ .field-file__name-text,
+    &:focus ~ .field-file__name-text {
+      @include field-focus;
+    }
+  }
+
+  &__name-text {
+    display: flex;
+    align-items: baseline;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding-right: 16px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    border-bottom: 1px solid $border-color;
+    background-color: #fff;
+    cursor: pointer;
+
+    @at-root input:disabled ~ & {
+      background: $gray-lighter;
+      cursor: not-allowed;
+    }
+
+    &::before {
+      content: attr(data-button-text);
+      display: block;
+      padding-top: $field-padding-vertical;
+      padding-bottom: $field-padding-vertical;
+      padding-right: 30px;
+      padding-left: 40px;
+      margin-right: 30px;
+      font-size: 20px;
+      line-height: $line-height;
+      background-color: $white;
+      background-repeat: no-repeat;
+      background-size: 12px 20px;
+      background-position: left 6px center;
+      background-image: svg-load('../blocks/field-file/bg-img/file.svg', fill=$text-color);
+      //border-right: 1px solid $border-color;
+      //border-top-left-radius: $border-radius;
+      //border-bottom-left-radius: $border-radius;
+    }
+
+    &:hover,
+    &:focus {
+
+      &::before {
+        background-color: $main-color; // как у обычных кнопок
+      }
+    }
+  }
+
+  &__help-text {
+    @include field-help-text;
+  }
+
+
+
+  &--error {
+
+    #{$block-name}__name,
+    #{$block-name}__name-text,
+    #{$block-name}__input,
+    #{$block-name}__help-text {
+      color: $color-danger;
+    }
+
+    #{$block-name}__name-text {
+      border-color: $color-danger;
+      background-color: lighten($color-danger, 35%);
+    }
+  }
+}

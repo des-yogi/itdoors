@@ -1,0 +1,81 @@
+$color-fb:                    #0078d7 !default;
+$color-in:                    #0077b5 !default;
+$color-insta:                 #833ab4 !default;
+$color-be:                    #1769ff !default;
+$color-dr:                    #ea4c89 !default;
+
+.social {
+
+  $block-name:                &; // #{$block-name}__
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__item {
+    margin-bottom: 0;
+
+    & + & {
+      margin-left: 24px;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 24px;
+    height: 24px;
+    text-decoration: none !important;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background 0.2s ease-out;
+    background-size: 18px 18px;
+
+    &--drib {
+      background-image: svg-load('../blocks/social/bg-img/dribbble.svg', fill=$icon-color);
+
+      &:hover,
+      &:focus {
+        background-image: svg-load('../blocks/social/bg-img/dribbble.svg', fill=$color-dr);
+      }
+    }
+
+    &--be {
+      background-image: svg-load('../blocks/social/bg-img/behance.svg', fill=$icon-color);
+
+      &:hover,
+      &:focus {
+        background-image: svg-load('../blocks/social/bg-img/behance.svg', fill=$color-be);
+      }
+    }
+
+    &--insta {
+      background-image: svg-load('../blocks/social/bg-img/instagram.svg', fill=$icon-color);
+
+      &:hover,
+      &:focus {
+        background-image: svg-load('../blocks/social/bg-img/instagram.svg', fill=$color-insta);
+      }
+    }
+
+    &--in {
+      background-image: svg-load('../blocks/social/bg-img/linkedin.svg', fill=$icon-color);
+
+      &:hover,
+      &:focus {
+        background-image: svg-load('../blocks/social/bg-img/linkedin.svg', fill=$color-in);
+      }
+    }
+
+    &--fb {
+      background-image: svg-load('../blocks/social/bg-img/facebook.svg', fill=$icon-color);
+
+      &:hover,
+      &:focus {
+        background-image: svg-load('../blocks/social/bg-img/facebook.svg', fill=$color-fb);
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.contact-us {
+  padding-top: 70px;
+  padding-bottom: 50px;
+  border-top: 1px solid $border-color;
+
+  $block-name:  &; // #{$block-name}__element
+
+  &__invite-col {
+    @include col(xs, 12);
+    @include col(md, 8);
+    @include col(xl, 5);
+    margin-bottom: 70px;
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__main-col {
+    @include col(xs, 12);
+    @include col-offset(xl, 2);
+    @include col(xl, 5);
+  }
+
+  &__invite {
+
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__btn-wrapper {
+
+  }
+}

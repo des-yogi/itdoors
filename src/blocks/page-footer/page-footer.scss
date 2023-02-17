@@ -1,0 +1,57 @@
+.page-footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: $body-bg;
+
+  @media (min-width: $screen-xl) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  $block-name:                &; // #{$block-name}__element
+
+  .social {
+    display: inline-flex;
+  }
+
+  &__col-copyrights {
+    @include col(xs, 12);
+    @include col(xl, 4);
+
+    @media (min-width: $screen-xl) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__col-nav {
+    @include col(xs, 12);
+    @include col(xl, 5);
+    order: -2;
+    margin-bottom: 20px;
+
+    @media (min-width: $screen-xl) {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+      order: 0;
+    }
+  }
+
+  &__col-socials {
+    @include col(xs, 12);
+    @include col(xl, 3);
+    order: -1;
+    margin-bottom: 30px;
+    text-align: center;
+
+    @media (min-width: $screen-xl) {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 0;
+      order: 0;
+      text-align: right;
+    }
+  }
+}

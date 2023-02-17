@@ -1,0 +1,70 @@
+.field-badge {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 25px;
+  margin-right: 20px;
+
+  $block-name:  &; // #{$block-name}__element
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  @supports (appearance: none) {
+
+    &__input {
+      appearance: none;
+      display: block;
+    }
+  }
+
+  &__label {
+    $font-size: 14px;
+    $line-height: $font-size * 1.15;
+    display: inline-block;
+    vertical-align: top;
+    padding: 6px 24px;
+    font-family: $font-family--title;
+    font-weight: 700;
+    font-size: $font-size;
+    line-height: $line-height;
+    white-space: nowrap;
+    color: $text-muted;
+    background-color: $white;
+    border: 2px solid $text-muted;
+    border-radius: $line-height * 2;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      color: $text-color;
+      border-color: $text-color;
+      background-color: $white;
+    }
+  }
+
+  #{$block-name}__input:focus + #{$block-name}__label {
+    color: $text-color;
+    background-color: $white;
+    border-color: $text-color;
+  }
+
+  #{$block-name}__input:checked + #{$block-name}__label {
+    color: $main-color;
+    background-color: $text-color;
+    border-color: $text-color;
+  }
+
+  #{$block-name}__input:disabled + #{$block-name}__label {
+    color: $text-muted;
+    background-color: $white;
+    border-color: $text-muted;
+    //pointer-events: none;
+    cursor: not-allowed;
+    opacity: $opacity;
+  }
+}

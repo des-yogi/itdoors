@@ -1,0 +1,109 @@
+.main-nav {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: none;
+  position: relative;
+  z-index: 10;
+
+  @media (min-width: $menu-desktop-width) {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0;
+    padding: 0;
+
+    @media (min-width: $screen-md) {
+      justify-content: center;
+    }
+  }
+
+  &__item {
+
+    @media (min-width: $menu-desktop-width) {
+      padding-left: 21px;
+      padding-right: 21px;
+      margin-bottom: 0;
+    }
+
+    &.active {
+
+      #{$block-name}__link {
+        font-weight: 800;
+        border-color: $title-color;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    vertical-align: top;
+    padding: 8px 0;
+    font-weight: 700;
+    font-size: 14px;
+    //background-image: none !important;
+    //text-shadow: none;
+    text-decoration: none;
+    color: $link-color;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease-out;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      border-color: $link-color;
+    }
+  }
+
+  &--footer {
+    display: block;
+    width: 100%;
+
+    #{$block-name}__list {
+      justify-content: center;
+
+      @media (min-width: $screen-xs) and (max-width: $screen-md - 1) {
+        margin-bottom: -10px;
+      }
+    }
+
+    #{$block-name}__item {
+      width: 50%;
+      //width: auto;
+      padding: 0 16px;
+      margin-bottom: 10px;
+
+      @media (min-width: $screen-md) {
+        width: auto;
+        margin-bottom: 0;
+      }
+
+      @media (min-width: $menu-desktop-width) {
+        padding: 0 12px !important;
+      }
+
+      &:nth-child(odd) {
+        padding-left: 0;
+        text-align: right;
+
+        @media (min-width: $screen-md) {
+          padding-left: 16px;
+        }
+      }
+
+      &:nth-child(even) {
+        padding-right: 0;
+
+        @media (min-width: $screen-md) {
+          padding-right: 16px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+.lang-switcher {
+
+  $block-name:  &; // #{$block-name}__element
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    padding: 8px 35px 8px 15px;
+    font-family: $font-family;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: $line-height;
+    white-space: nowrap;
+    color: inherit;
+    background-color: transparent;
+    border: none;
+    user-select: none;
+    cursor: pointer;
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 24px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 24px;
+      background-image: svg-load('../blocks/sprite-svg/svg/drop-arrow.svg', fill=$text-color);
+      transition: transform 0.2s ease-out;
+    }
+
+    &[aria-expanded=true] {
+
+      &::after {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &__list {
+    background-color: $white;
+  }
+
+  &__item {
+    padding: 0 15px;
+    margin-bottom: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+
+    &.active {
+
+      #{$block-name}__link {
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    padding: 8px 0;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none !important;
+    color: $link-color;
+    transition: all 0.2s ease-out;
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: currentColor;
+      transition: width 0.25s ease-out;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      border-color: $link-color;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}

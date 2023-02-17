@@ -1,0 +1,32 @@
+.contacts-full {
+
+  @media (min-width: $screen-xl) {
+    padding-top: 145px !important;
+  }
+
+  $block-name:  &; // #{$block-name}__element
+
+  &__list {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    margin-bottom: -50px;
+  }
+
+  &__col {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(xl, 4, 8);
+    margin-bottom: 50px;
+
+    &--address {
+      @include col(md, 12);
+      @include col(xl, 8, 8);
+    }
+  }
+
+  &__subtitle {
+    margin-top: 0;
+    color: $text-muted;
+  }
+}

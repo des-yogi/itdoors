@@ -1,0 +1,77 @@
+.presentation {
+  background-color: $white;
+
+  $block-name:  &; // #{$block-name}__element
+
+  &__col-text {
+    @include col(xs, 12);
+    @include col(md, 5);
+    @include col(xl, 3);
+  }
+
+  &__col-img {
+    display: none;
+    @include col(md, 7);
+    @include col(xl, 9);
+
+    @media (min-width: $screen-md) {
+      display: block;
+    }
+  }
+
+  &__text {
+
+    @media (min-width: $screen-md) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  &__descr {
+    width: 100%;
+    margin-bottom: 16px;
+    color: $text-muted;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__img {
+
+    @media (min-width: $screen-md) {
+      padding: 0 20px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding: 0 45px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &--apart {
+
+    @media (min-width: $screen-xl) {
+      padding-right: 40px;
+      padding-bottom: 50px;
+    }
+  }
+}

@@ -1,0 +1,680 @@
+// Стилизация БЭМ-блока page.
+// Общие стили тегов.
+// Подключение шрифтов.
+// Типографика.
+
+
+// Сделаем viewport великим снова! (привет, IE10) http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+@at-root {
+
+  @-ms-viewport {
+    width: device-width;
+  }
+}
+
+
+/* stylelint-disable */
+// font-display: swap;
+
+/* manrope-600 - latin_cyrillic */
+@font-face {
+  font-display: swap;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  src: local(''),
+       url('../fonts/manrope-v1-latin_cyrillic-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/manrope-v1-latin_cyrillic-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* manrope-700 - latin_cyrillic */
+@font-face {
+  font-display: swap;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+       url('../fonts/manrope-v1-latin_cyrillic-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/manrope-v1-latin_cyrillic-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* manrope-800 - latin_cyrillic */
+@font-face {
+  font-display: swap;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  src: local(''),
+       url('../fonts/manrope-v1-latin_cyrillic-800.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/manrope-v1-latin_cyrillic-800.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* inter-regular - latin_cyrillic */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/inter-v1-latin_cyrillic-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/inter-v1-latin_cyrillic-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* inter-500 - latin_cyrillic */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+       url('../fonts/inter-v1-latin_cyrillic-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/inter-v1-latin_cyrillic-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+/* stylelint-enable */
+
+
+.page {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: 100%;
+  min-width: 320px;
+  min-height: 100%;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    //height: 100vh;
+    //width: 100%;
+  }
+
+  &__content {
+    flex-grow: 1;
+
+    &--index {
+      background-repeat: no-repeat;
+      background-size: 470px;
+      background-position: -50px 440px;
+      background-image: svg-load('../blocks/hero/bg-img/blured-circle.svg');
+
+      @media (min-width: $screen-sm) {
+        background-position: 0 400px;
+      }
+
+      @media (min-width: $screen-md) {
+        background-position: 130% 135px;
+        background-size: 530px;
+      }
+
+      @media (min-width: $screen-lg) {
+        background-position: 90% 135px;
+      }
+
+      @media (min-width: $screen-xl) {
+        background-position: 80% 90px;
+        background-size: 860px;
+      }
+    }
+
+    &--noindex {
+      background-color: $white;
+
+      .page-header__inner {
+        background-color: $white;
+      }
+    }
+
+    &--divided {
+
+      .page-header__col-logo {
+
+        @media (min-width: $screen-xl) {
+          position: relative;
+        }
+
+        &::after {
+
+          @media (min-width: $screen-xl) {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 15px;
+            width: 1px;
+            background-color: $border-color;
+          }
+        }
+      }
+    }
+  }
+
+  &__footer-wrapper {
+    flex-shrink: 0;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  display: flex;           // Исправляем баг в IE для min-height and flexbox (flex-direction:column)
+  flex-direction: column;  // и прижимаем footer в IE 10-11
+  margin: 0;
+  min-height: 100%;
+  word-break: break-word;
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  text-align: left;
+  //text-decoration-skip-ink: auto;
+  color: $text-color;
+  background-color: $body-bg;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+[tabindex='-1']:focus {
+  outline: none !important;
+}
+
+// Коррекция для кликабельных элементов с указанной ролью в iOS
+[role='button'] {
+  cursor: pointer;
+}
+
+// Мы любим Сафари (на самом деле, нет).
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+// area,
+// summary,
+a,
+button,
+[role='button'],
+input,
+label,
+select,
+textarea {
+  touch-action: manipulation; // Стилевая коррекция 300ms задержки (для поддерживающих браузеров)
+  margin: 0;                  // Убираем margin в Firefox и Safari
+}
+
+button,
+input {
+  overflow: visible;    // Покажем торчащее в Edge
+  text-transform: none; // Уберём наследование text transform в Firefox
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; // Коррекция проблем стилизации для Safari
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  -webkit-appearance: listbox; // Коррекция для Mobile Safari (https://github.com/twbs/bootstrap/issues/11266)
+}
+
+textarea {
+  overflow: auto;   // Удаление верт. скролла в IE.
+  resize: vertical; // Правильное изменение размеров
+}
+
+svg {
+  fill: currentColor;
+
+  a &,
+  button & {
+    pointer-events: none; // Мы любим Edge, это браузер! (почти)
+  }
+
+  &:not(:root) {
+    overflow: hidden; // Скрыть выступающее за границы в IE
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a:not(.icon):not(.special) {
+  font-family: $font-family--title;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-skip-ink: auto; // кроме IE, Safari и iOS Safari
+  text-decoration-color: $link-color; // кроме IE
+  text-decoration-style: solid; // кроме IE
+  text-underline-position: under; // кроме IE и iOS Safari
+  text-decoration-thickness: 2px; // Firefox, Safari, iOS Safari only
+  letter-spacing: 0.035em;
+  color: $link-color;
+  background-color: transparent;
+  transition: all 0.2s ease-out;
+  // background-image: linear-gradient(to right, $link-color);
+  // background-position: 0 1.25em;
+  // background-repeat: repeat-x;
+  // background-size: 10px 2px;
+  // text-shadow:
+  //   -2px -2px white,
+  //   -2px  2px white,
+  //    2px -2px white,
+  //    2px  2px white;
+  //transition: color 0.3s;
+
+  &:hover,
+  &:focus {
+    text-decoration-color: $main-color;
+    color: $link-color--hover;
+    //background-color: $main-color;
+    //background-image: linear-gradient(to right, $main-color);
+  }
+
+  // &:visited {
+  //   color: $link-color--hover;
+  // }
+}
+
+a.icon {
+  text-decoration: none;
+}
+
+hr {
+  box-sizing: content-box; // Проблема Firefox
+  height: 0;               // Проблема Firefox
+  overflow: visible;       // Проблема Edge и IE
+  margin-top: $typo-margin-vertical * 2;
+  margin-bottom: $typo-margin-vertical * 2;
+  border: 0;
+  border-top: 1px solid $border-color;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  //margin-top: 1em;
+  //margin-bottom: 0.5em;
+  font-family: $font-family--title;
+  //font-weight: 700;
+  line-height: 1.2;
+  color: $title-color;
+}
+
+h1,
+.h1 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: $font-size-h1;
+  font-weight: 600;
+
+  @media (min-width: $menu-desktop-width) {
+    font-size: $font-size-h1 * 1.2381;
+  }
+
+  &--enlarged {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.15;
+
+    @media (min-width: $screen-md) {
+      font-size: 52px;
+    }
+
+    @media (min-width: $screen-xl) {
+      font-size: 64px;
+    }
+  }
+}
+
+h2,
+.h2 {
+  margin-top: 70px;
+  margin-bottom: 24px;
+  font-size: $font-size-h2;
+  font-weight: 600;
+}
+
+h3,
+.h3 {
+  margin-top: 70px;
+  margin-bottom: 24px;
+  font-size: $font-size-h3;
+  font-weight: 600;
+}
+
+h4,
+.h4 {
+  margin-top: 40px;
+  margin-bottom: 12px;
+  font-size: $font-size-h4;
+  font-weight: 700;
+}
+
+h5 {
+  margin-top: 1em;
+  margin-bottom: 0;
+  font-size: $font-size-h5;
+  font-weight: 600;
+}
+
+h6 {
+  margin-top: 1em;
+  margin-bottom: 0;
+  font-size: $font-size-h6;
+  font-weight: 600;
+}
+
+p,
+ul,
+ol,
+dl,
+table,
+blockquote,
+pre,
+address,
+figure {
+  margin-top: 0;
+  margin-bottom: 16px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: $typo-margin-vertical;
+  }
+}
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+p {
+  // http://clagnut.com/blog/2395
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  hyphenate-limit-lines: 2;
+  hyphenate-limit-last: always;
+  hyphenate-limit-zone: 8%;
+}
+
+address {
+  font-style: normal;
+}
+
+ul,
+ol {
+  margin-bottom: $typo-margin-vertical;
+  padding-left: 1.5em;
+
+  ul,
+  ol {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+li {
+  margin-bottom: $typo-margin-vertical;
+  line-height: inherit;
+
+  &:last-child {
+    //margin-bottom: 0;
+  }
+}
+
+// Вложенные упорядоченные списки: 1, 2, 3, 3.1 -> 3.1.1, 3.1.2…
+/* ol {
+  list-style: none;
+  counter-reset: something;
+  padding-left: 0;
+
+  li {
+    counter-increment: something;
+
+    &::before {
+      content: counters(something, ".") ". ";
+    }
+  }
+
+  ol {
+    padding-left: 1.3em;
+  }
+} */
+
+// Отключение излишних ссылок при помощи аттрибутов  aria-hidden="true" tabindex="-1"
+
+
+// .small,
+small {
+  font-size: $font-size-sm;
+}
+
+sub,
+sup {
+  font-size: $font-size-sm;
+}
+
+.mark,
+mark {
+  position: relative;
+  z-index: -1;
+  background: $main-color;
+  padding: 0 5px;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+// abbr[title] {
+//   text-decoration: underline dotted;
+// }
+
+blockquote {
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+// samp,
+code,
+kbd,
+pre {
+  font-family: $font-family--monospace;
+}
+
+code {
+  padding: 0.06em 0.3em;
+  color: $text-color;
+  background-color: rgba(#000, 0.08);
+  border-radius: $border-radius;
+}
+
+kbd {
+  padding: 0.06em 0.3em;
+  color: $text-color;
+  background-color: $gray-lightest;
+  border-radius: $border-radius;
+
+  kbd {
+    padding: 0;
+  }
+}
+
+pre {
+  display: block;
+  width: 100%;
+  margin-bottom: $typo-margin-vertical;
+  overflow-x: auto;
+  tab-size: 2;
+  background-color: rgba(#000, 0.08);
+
+  code {
+    background: transparent;
+  }
+}
+
+.fade {
+  @include transition($transition-fade);
+
+  &:not(.show) {
+    opacity: 0;
+  }
+}
+
+.collapse {
+  &:not(.show) {
+    display: none;
+  }
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  @include transition($transition-collapse);
+}
+
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.list-nostyled {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+
+  li::before {
+    display: none;
+  }
+}
+
+/* Кастомизируем выделение текста на сайте */
+*:not(img)::selection {
+  //color: $white;
+  background-color: $main-color; /* Safari, Chrome, Opera */
+}
+
+*:not(img)::-moz-selection {
+  //color: $white;
+  background-color: $main-color; /* FireFox */
+}
+
+.container {
+  display: block;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: none;
+
+  @media (min-width: $screen-md) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media (min-width: $screen-xl) {
+    $padding-min: 80px; // нужный отступ от краев экрана
+    $half-screen-xl: $screen-xl / 2 - $padding-min;
+    // padding: 1em calc(50% - 600px); //600px - это $screen-xl / 2 - нужный отступ от края экрана
+    padding-left: calc(50% - #{$half-screen-xl});
+    padding-right: calc(50% - #{$half-screen-xl});
+  }
+}
+
+// Родитель. Указаны промежутки между ячейками: XS|SM|MD|LG|XL|XXL;
+// @include row($grid-gutter-width, 10px, 12px, 16px, 20px, 26px);
+.row {
+  @include row(
+    $xs-grid-gutter:  $grid-gutter-width,
+    $sm-grid-gutter:  $grid-gutter-width,
+    $md-grid-gutter:  $grid-gutter-width,
+    $lg-grid-gutter:  $grid-gutter-width,
+    $xl-grid-gutter:  $grid-gutter-width,
+    $xxl-grid-gutter: $grid-gutter-width
+  );
+}
+
+.subtitle {
+  margin-bottom: 16px;
+  font-family: $font-family--title;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.035em;
+  color: $text-muted;
+}
+
+.text-large {
+  font-family: inherit;
+  font-size: 20px;
+  line-height: 1.5;
+
+  &--muted {
+    color: $text-muted;
+  }
+}
+
+/* &__element {
+  @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
+  @include col(sm, 6, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
+  @include col(md, 4, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+  @include col(lg, 3, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
+  @include col(xl, 2, $grid-columns, 20px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
+  @include col(xxl, 1, $grid-columns, 26px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
+} */
+
+
+// background-image: svg-load('../blocks/phones-modal/bg-img/phone.svg', fill=$main-color, stroke=rgba(255, 255, 255, 0));
+// background-image: svg-load('../blocks/sprite-svg/svg/phone.svg', fill=$main-color);
+

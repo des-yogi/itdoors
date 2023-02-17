@@ -1,0 +1,125 @@
+.services {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: $white;
+
+  @media (min-width: $screen-md) {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  $block-name:  &; // #{$block-name}__element
+
+  &__intro-col {
+    @include col(xs, 12);
+    @include col(md, 10);
+    @include col(xl, 6);
+  }
+
+  &__title,
+  &__slogan {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  &__intro {
+    margin-bottom: 70px;
+  }
+
+  &__list {
+    margin-bottom: -50px !important;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: -40px !important;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: -30px !important;
+    }
+  }
+
+  &__item {
+    @include col(xs, 12);
+    @include col(md, 6);
+    @include col(lg, 4);
+    @include col(xl, 3);
+    margin-bottom: 50px;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+
+    &::after {
+      display: block;
+      content: "";
+      width: 24px;
+      height: 24px;
+      margin-top: auto;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 22px 12px;
+      background-image: svg-load('../blocks/services/bg-img/arrow-right-btn.svg', fill=$icon-color);
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+
+    &:hover,
+    &:focus {
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 36px;
+    height: 36px;
+    background-repeat: no-repeat;
+    background-position: left center;
+
+    &--design {
+      background-size: 36px 36px;
+      background-image: url(../img/ui-ux-design.svg);
+    }
+
+    &--mobile {
+      background-size: 20px 36px;
+      background-image: url(../img/mobile-apps.svg);
+    }
+
+    &--web-dev {
+      background-size: 36px 36px;
+      background-image: url(../img/web-dev.svg);
+    }
+
+    &--ai {
+      background-size: 36px 36px;
+      background-image: url(../img/artificial.svg);
+    }
+  }
+
+  &__subtitle {
+    margin-top: 20px;
+    margin-bottom: 24px;
+    color: $title-color;
+  }
+
+  &__descr {
+    margin-bottom: 20px;
+    color: $text-muted;
+  }
+}

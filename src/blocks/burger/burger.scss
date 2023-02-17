@@ -1,0 +1,53 @@
+.burger {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  margin-left: 20px;
+  border: none;
+  padding: 9px 0;
+  line-height: 30px;
+  background: transparent;
+  user-select: none;
+  cursor: pointer;
+
+  @media (min-width: $screen-sm) {
+    margin-left: 30px;
+  }
+
+  @media (min-width: $screen-md) {
+    margin-left: 50px;
+  }
+
+  @media (min-width: $menu-desktop-width) {
+    display: none;
+  }
+
+  > span { // stylelint-disable-line  selector-combinator-blacklist
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: $toggler-part-height;
+    vertical-align: top;
+    font-size: 0;
+    color: transparent;
+    background: $toggler-part-bg-color;
+    transition: background $transition-time $transition-time;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: $toggler-part-height;
+      background: $toggler-part-bg-color;
+      transform-origin: 50% 50%;
+      //transition: ;
+    }
+
+    &:before {
+      bottom: -12px;
+    }
+  }
+}
